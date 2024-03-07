@@ -5,8 +5,11 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToOne;
 import jakarta.validation.constraints.Email;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -36,9 +39,16 @@ public class Persona {
   @CPF(message = "CPF Inválido")
   private String cpf;
 
+  @OneToOne
+  private ContaCorrente contaCorrente;
+
+  @OneToOne
+  private ContaPoupanca poupanca;
+
   private LocalDate birthDay;
   private Character gender;
   private LocalDate whenCreated;
   private LocalDate lastLogin;
+  //private List<String> chavePix = new ArrayList<>();
 
 }

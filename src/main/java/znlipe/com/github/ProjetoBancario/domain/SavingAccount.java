@@ -1,8 +1,9 @@
 package znlipe.com.github.ProjetoBancario.domain;
 
 import jakarta.persistence.Entity;
-import java.util.ArrayList;
-import java.util.List;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,10 +14,10 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class ContaCorrente extends Conta{
+public class SavingAccount extends Account {
 
-  private List<Emprestimo> emprestimos = new ArrayList<>();
-  private List<Card> cards = new ArrayList<>();
-  private List<Checkbook> checkbook = new ArrayList<>();
+  @Id
+  @GeneratedValue (strategy = GenerationType.IDENTITY)
+  private Long id;
 
 }

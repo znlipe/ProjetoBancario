@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Extrato {
+public class Extract {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -26,6 +26,6 @@ public class Extrato {
 
   //duvida: Conta é abstrata... Como puxar ela aqui?
   @ManyToOne
-  private Conta conta;
+  private Account account;
 
 }

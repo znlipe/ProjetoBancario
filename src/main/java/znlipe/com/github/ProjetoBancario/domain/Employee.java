@@ -7,12 +7,10 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
-//@Builder
+@Builder
 @Entity
 @NoArgsConstructor
-//@AllArgsConstructor
-public class ContaPoupanca extends Conta {
-
-
+@AllArgsConstructor
+public class Employee extends Persona {
 
 }

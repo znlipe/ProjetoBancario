@@ -5,6 +5,7 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.OneToMany;
+import jakarta.persistence.Table;
 import java.util.ArrayList;
 import java.util.List;
 import lombok.AllArgsConstructor;
@@ -17,26 +18,19 @@ import lombok.NoArgsConstructor;
 @Entity
 @NoArgsConstructor
 @AllArgsConstructor
-public class Agencia {
+public class CurrentAccount extends Account {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  @OneToMany
-  private List<Persona> clientes = new ArrayList<>();
+  @OneToMany(mappedBy = "currentAccount")
+  private List<Card> cards;
 
-  @OneToMany
-  private List<ContaCorrente> contasCorrentes = new ArrayList<>();
-
-  @OneToMany
-  private List<ContaPoupanca> contasPoupancas = new ArrayList<>();
-
-  @OneToMany(mappedBy = "idFunc")
-  private List<Funcionario> funcionarios = new ArrayList<>();
-
-  private String endereco;
-  private String numero;
-
+  private List<Checkbook> checkbook;
+  private List<Loan> loans;
 
 }
+
+
+

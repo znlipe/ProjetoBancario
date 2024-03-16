@@ -16,18 +16,16 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Emprestimo {
+public class Loan {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-  private BigDecimal valorTotal;
-  private BigDecimal taxaJuros;
-  private Integer parcelas;
-  private BigDecimal debitoRestante;
-
-  @OneToMany
-  private ContaCorrente conta;
+  private Integer installments;
+  private BigDecimal totalPrice;
+  private BigDecimal remainDebit;
+  private BigDecimal interestRates;
+  private CurrentAccount currentAccount;
 
 
 }

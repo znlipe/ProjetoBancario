@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.OneToOne;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,19 +18,19 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Transferencia {
+public class Transfer {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
   private BigDecimal valor;
-  private LocalDate whenCreated;
+  private LocalDateTime whenCreated;
 
   @OneToOne
-  private Conta contaOrigem;
+  private Account destinyAccount;
 
   @OneToOne
-  private Conta contaDestino;
+  private Account destinyAccount;
 
 }

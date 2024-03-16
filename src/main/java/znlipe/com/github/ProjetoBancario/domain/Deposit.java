@@ -7,6 +7,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.ManyToOne;
 import java.math.BigDecimal;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,16 +18,13 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Deposito {
+public class Deposit {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
-
-  private BigDecimal valor;
-  private LocalDate whenCreated;
-
-  @ManyToOne
-  private Conta conta;
+  private BigDecimal totalDeposited;
+  private LocalDateTime whenCreated;
+  private Account account;
 
 }

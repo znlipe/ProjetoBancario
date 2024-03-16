@@ -22,12 +22,12 @@ public class Checkbook {
   @GeneratedValue(strategy = GenerationType.IDENTITY)
   private Long id;
 
-  private String numero;
+  private String number;
   private LocalDate whenCreated;
 
   @OneToOne
-  private ContaCorrente titular;
+  private CurrentAccount accountHolder;
 
-  private Integer folhasEmitidas;
+  private Integer numberOfPages;
 
 }
